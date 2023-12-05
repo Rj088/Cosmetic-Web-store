@@ -1,0 +1,32 @@
+.background-image {
+    background-image: linear-gradient(45deg, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.5) 50%), url('/assets/images/grid_0.jpg'), url('/assets/images/grid_0.jpg');
+    background-repeat: no-repeat;
+    background-size: 0% 50%, 50% 100%, cover;
+    background-position: left, right, center;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+  }
+  
+  .background-image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient(to bottom left, rgba(237, 237, 237, 0) 50%, rgba(0, 0, 0, 0.275) 50%);
+  }
+
+  .card{
+    margin: 20px;
+    box-shadow: none; /* remove box-shadow */
+    opacity: 0.9; /* set opacity to 0.7 (70%) */
+  }
+  h5{
+    color: gray;
+  }
+  p
+  {
+    color: rgb(130, 130, 130);
+  }

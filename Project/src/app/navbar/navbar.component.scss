@@ -1,0 +1,32 @@
+.bg-custom {
+    background-color: rgb(195, 195, 195);
+  }
+  a
+  {
+    color:white;
+  }
+  .hidden-items {
+    display: none;
+  }
+  
+  .show {
+    display: block;
+  }
+
+  .menu {
+    position: relative;
+    top: 45px;
+    left: 5px;
+    background-color: darkgray;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  
+  .dropdown-menu a {
+    color: #000;
+  }
+  
+  .dropdown-menu a:hover {
+    background-color: #eee;
+  }

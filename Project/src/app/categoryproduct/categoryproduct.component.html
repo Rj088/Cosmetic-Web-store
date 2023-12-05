@@ -1,0 +1,44 @@
+<form (ngSubmit)="if_Clicked()">
+  <div style="margin-top: 100px;"  class="d-flex justify-content-center align-items-center">
+    <label class="form-check-label">Sort By</label>
+    <br>
+    <label class="form-check-label">Prices  :-</label>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="LTH" [(ngModel)]="sort">
+      <label class="form-check-label" for="inlineRadio1">Low to High</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="HTL" [(ngModel)]="sort">
+      <label class="form-check-label" for="inlineRadio2">High to Low</label>
+    </div>
+    <br>
+    <label class="form-check-label">Name :-</label>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="AZ" [(ngModel)]="sort">
+      <label class="form-check-label" for="inlineRadio3">A-Z</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="ZA"[(ngModel)]="sort">
+      <label class="form-check-label" for="inlineRadio4">Z-A</label>
+    </div>
+    <div>
+      <button type="submit" class="btn btn-primary">submit</button>
+    </div>
+  </div>
+  </form>
+  <div class="container mt-5">
+      <div class="row" style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+        <div class="col-lg-5" *ngFor="let product of filtered_products">
+          <div class="card" style="width: 27rem; border: 1px solid grey; margin-bottom: 30px; margin-top: 15px; margin-left: 50px; ">
+            <img [src]="product.img" class="card-img-top" alt="..." style="border: 1px solid whitesmoke; width: 366.4px; height: 366.4px;">            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">ID: {{ product.Id }}</h5>
+              <p class="card-text">Name: {{product.Name}}</p>
+              <p class="card-text">Brand: {{product.Brand}}</p>
+              <p class="card-text" style="display: inline-block;">Rating:<app-rating [rating]="product.Rating"></app-rating></p>
+              <p class="card-text">Price: {{product.Price}}</p>
+              <a  [routerLink]="['/product.category']" class="btn btn-primary" (click)="addToCart(product)" (click)="add_to_cart(product.Id)">{{product.buttonText}} </a>
+            </div>
+          </div>
+        </div>  
+  </div>
+  </div>
